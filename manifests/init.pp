@@ -33,8 +33,8 @@ class apache (
   file { 'httpd_vdir':
     ensure  => directory,
     path    => $apache::params::vdir,
-    recurse => true,
-    purge   => true,
+    recurse => false,
+    purge   => false,
     notify  => Service['httpd'],
     require => Package['httpd'],
   }
